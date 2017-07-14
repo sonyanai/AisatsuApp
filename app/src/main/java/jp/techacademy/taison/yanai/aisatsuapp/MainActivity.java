@@ -15,13 +15,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        final int hourOfDay = 0;
+
+
 
         final Button button1 = (Button) findViewById(R.id.button1);
         button1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
 
-                 int hourOfDay=14;
                 TextView textView = (TextView)findViewById(R.id.textView);
                 if(2 <= hourOfDay && hourOfDay <10){
                     textView.setText("おはよう");

@@ -10,16 +10,15 @@ import android.util.Log;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+    int hourOfDay;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final int hourOfDay = 14;
+        //int hourOfDay = 0;
 
-
-
-        final Button button1 = (Button) findViewById(R.id.button1);
+        Button button1 = (Button) findViewById(R.id.button1);
         button1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -41,8 +40,11 @@ public class MainActivity extends AppCompatActivity {
     private void showTimePickerDialog() {
         TimePickerDialog timePickerDialog = new TimePickerDialog(this,
                 new TimePickerDialog.OnTimeSetListener() {
+
                     @Override
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                        MainActivity.this.hourOfDay = hourOfDay;
+
                         Log.d("UI_PARTS", String.valueOf(hourOfDay) + ":" + String.valueOf(minute));
                     }
                 },

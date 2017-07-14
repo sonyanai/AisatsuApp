@@ -3,12 +3,13 @@ package jp.techacademy.taison.yanai.aisatsuapp;
 import android.app.TimePickerDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutCompat;
 import android.widget.Button;
 import android.widget.TimePicker;
 import android.view.View;
 import android.util.Log;
 
-public abstract class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,7 +17,12 @@ public abstract class MainActivity extends AppCompatActivity implements View.OnC
         setContentView(R.layout.activity_main);
 
         Button button1 = (Button) findViewById(R.id.button1);
-        button1.setOnClickListener(this);
+        button1.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Log.d("UI_PARTS","ボタンをタップしました");
+            }
+        });
 
         showTimePickerDialog();
     }

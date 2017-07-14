@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
                     textView.setText("おはよう");
                 }else if(10 <= hourOfDay){
                     textView.setText("こんにちは");
-                }else if(18 <= hourOfDay || hourOfDay <2){
+                }else if(18 <= hourOfDay || hourOfDay < 2){
                     textView.setText("こんばんは");
                 }
             }
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                         Log.d("UI_PARTS", String.valueOf(hourOfDay) + ":" + String.valueOf(minute));
                     }
                 },
-                13,
+                0,
                 0,
                 true);
         timePickerDialog.show();

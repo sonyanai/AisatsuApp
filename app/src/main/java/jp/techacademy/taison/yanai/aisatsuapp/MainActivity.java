@@ -11,27 +11,33 @@ import android.util.Log;
 
 public class MainActivity extends AppCompatActivity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState, final int hourOfDay) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button button1 = (Button) findViewById(R.id.button1);
+        final Button button1 = (Button) findViewById(R.id.button1);
         button1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Log.d("UI_PARTS","ボタンをタップしました");
+
+                if(2 <= hourOfDay && hourOfDay < 10){
+                    button1.setText("おはよう");
+                }else if(10 <= hourOfDay && hourOfDay < 18){
+                    button1.setText("こんにちは");
+                }else{
+                    button1.setText("こんばんは");
+                }
             }
         });
 
         showTimePickerDialog();
     }
 
-    private void showTimePickerDialog(){
+    private void showTimePickerDialog() {
         TimePickerDialog timePickerDialog = new TimePickerDialog(this,
-                new TimePickerDialog.OnTimeSetListener(){
+                new TimePickerDialog.OnTimeSetListener() {
                     @Override
-                    public  void  onTimeSet(TimePicker view, int hourOfDay, int minute){
+                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                         Log.d("UI_PARTS", String.valueOf(hourOfDay) + ":" + String.valueOf(minute));
                     }
                 },

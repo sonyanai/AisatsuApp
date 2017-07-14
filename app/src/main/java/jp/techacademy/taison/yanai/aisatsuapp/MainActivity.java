@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.TimePicker;
 import android.view.View;
 import android.util.Log;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,18 +15,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         final Button button1 = (Button) findViewById(R.id.button1);
         button1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
 
                  int hourOfDay=0;
+                TextView textView = (TextView)findViewById(R.id.textView);
                 if(2 <= hourOfDay && hourOfDay < 10){
-                    button1.setText("おはよう");
+                    textView.setText("おはよう");
                 }else if(10 <= hourOfDay && hourOfDay < 18){
-                    button1.setText("こんにちは");
+                    textView.setText("こんにちは");
                 }else{
-                    button1.setText("こんばんは");
+                    textView.setText("こんばんは");
                 }
             }
         });

@@ -23,9 +23,9 @@ public class MainActivity extends AppCompatActivity {
 
                  int hourOfDay=0;
                 TextView textView = (TextView)findViewById(R.id.textView);
-                if(2 <= hourOfDay && hourOfDay < 10){
+                if(2 <= hourOfDay || hourOfDay < 10){
                     textView.setText("おはよう");
-                }else if(10 <= hourOfDay && hourOfDay < 18){
+                }else if(10 <= hourOfDay || hourOfDay < 18){
                     textView.setText("こんにちは");
                 }else{
                     textView.setText("こんばんは");

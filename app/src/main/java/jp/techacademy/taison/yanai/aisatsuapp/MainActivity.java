@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TimePicker;
 import android.view.View;
-import android.util.Log;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -16,7 +15,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //int hourOfDay = 0;
 
         Button button1 = (Button) findViewById(R.id.button1);
         button1.setOnClickListener(new View.OnClickListener(){
@@ -43,9 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                        MainActivity.this.hourOfDay = hourOfDay;
-
-                        //Log.d("UI_PARTS", String.valueOf(hourOfDay) + ":" + String.valueOf(minute));
+                        MainActivity.this.hourOfDay = hourOfDay;//ここでメンバ変数宣言したhoourOfDayに代入する！
                     }
                 },
                 0,

@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
 
-                 int hourOfDay=0;
+                 int hourOfDay=10;
                 TextView textView = (TextView)findViewById(R.id.textView);
                 if(2 <= hourOfDay){
                     textView.setText("おはよう");

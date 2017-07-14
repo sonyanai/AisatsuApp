@@ -3,7 +3,6 @@ package jp.techacademy.taison.yanai.aisatsuapp;
 import android.app.TimePickerDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutCompat;
 import android.widget.Button;
 import android.widget.TimePicker;
 import android.view.View;
@@ -11,7 +10,7 @@ import android.util.Log;
 
 public class MainActivity extends AppCompatActivity {
 
-    protected void onCreate(Bundle savedInstanceState, final int hourOfDay) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -20,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
 
+                 int hourOfDay=0;
                 if(2 <= hourOfDay && hourOfDay < 10){
                     button1.setText("おはよう");
                 }else if(10 <= hourOfDay && hourOfDay < 18){

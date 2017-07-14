@@ -17,6 +17,8 @@ public abstract class MainActivity extends AppCompatActivity implements View.OnC
 
         Button button1 = (Button) findViewById(R.id.button1);
         button1.setOnClickListener(this);
+
+        showTimePickerDialog();
     }
 
     private void showTimePickerDialog(){

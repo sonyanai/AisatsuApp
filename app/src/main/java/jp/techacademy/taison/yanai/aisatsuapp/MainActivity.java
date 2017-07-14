@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                         MainActivity.this.hourOfDay = hourOfDay;
 
-                        Log.d("UI_PARTS", String.valueOf(hourOfDay) + ":" + String.valueOf(minute));
+                        //Log.d("UI_PARTS", String.valueOf(hourOfDay) + ":" + String.valueOf(minute));
                     }
                 },
                 0,
